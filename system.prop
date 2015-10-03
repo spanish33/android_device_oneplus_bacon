@@ -52,6 +52,8 @@ persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.4k2kSplit=1
 debug.mdpcomp.logs=0
 dalvik.vm.heapsize=36m
+dalvik.vm.image-dex2oat-filter=everything
+dalvik.vm.dex2oat-filter=everything
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 
