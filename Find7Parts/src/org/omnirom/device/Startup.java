@@ -27,8 +27,8 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         DoubleTapSwitch.restore(context);
         CameraGestureSwitch.restore(context);
-        TorchGestureSwitch.restore(context);
 /* Commented out until reimplemented
+        TorchGestureSwitch.restore(context);
         MusicGestureSwitch.restore(context);
         VibratorStrengthPreference.restore(context);
         SuspendFreqCap.restore(context);

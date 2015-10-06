@@ -35,12 +35,10 @@ public class KeyHandler implements DeviceKeyHandler {
 
     // Supported scancodes
     private static final int GESTURE_CIRCLE_SCANCODE = 250;
-    private static final int GESTURE_V_SCANCODE = 252;
     private static final int KEY_DOUBLE_TAP = 255;
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_CIRCLE_SCANCODE,
-        GESTURE_V_SCANCODE,
         KEY_DOUBLE_TAP
     };
 
@@ -88,14 +86,6 @@ public class KeyHandler implements DeviceKeyHandler {
                 mPowerManager.wakeUp(SystemClock.uptimeMillis());
                 Intent intent = new Intent(action, null);
                 startActivitySafely(intent);
-                break;
-            case GESTURE_V_SCANCODE:
-                if (DEBUG) Log.i(TAG, "GESTURE_V_SCANCODE");
-                mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-                Intent torchIntent = new Intent("com.android.systemui.TOGGLE_FLASHLIGHT");
-                torchIntent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
-                UserHandle user = new UserHandle(UserHandle.USER_CURRENT);
-                mContext.sendBroadcastAsUser(torchIntent, user);
                 break;
             }
         }
